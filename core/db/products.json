@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "nazwa": "Specjalny Skin",
+      "opis": "Otrzymaj unikalny skin dla swojej postaci.",
+      "obraz": "https://placehold.co/200"
+    },
+    {
+      "id": 2,
+      "nazwa": "Super Broń",
+      "opis": "Zdobądź wyjątkową broń do gry.",
+      "obraz": "https://placehold.co/200"
+    },
+    {
+      "id": 3,
+      "nazwa": "Epicki Zestaw",
+      "opis": "Kompletny zestaw do ulepszania postaci.",
+      "obraz": "https://placehold.co/200"
+    }
+  ]
+  
