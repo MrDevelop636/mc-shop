@@ -3,48 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edytor Strony - Podobny do Wix</title>
+    <title>Edytor Strony - Wix-like</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .toolbar {
-            background: #f4f4f4;
-            padding: 10px;
-            display: flex;
-            gap: 10px;
-        }
-
-        .editable-area {
-            width: 100%;
-            height: 500px;
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 20px 0;
-            overflow: auto;
-        }
-
-        .editable-box {
-            width: 100%;
-            text-align: center;
-            padding: 50px 20px;
-            background-color: #f4f4f4;
-        }
-
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .toolbar button, .toolbar input {
-            padding: 5px 10px;
-            font-size: 14px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -56,22 +17,56 @@
         <input type="file" id="uploadImage" />
     </div>
 
-    <!-- Edytowalna zawartość strony -->
+    <!-- Edytowalna zawartość -->
     <div contenteditable="true" class="editable-area" id="editableContent">
         <div class="editable-box">
             <h1>Witaj w moim Edytorze!</h1>
             <p>Edytuj tę stronę, zmieniając tekst, kolory lub obrazy.</p>
         </div>
-        <div class="image-container">
-            <img src="https://via.placeholder.com/600x300" alt="Obrazek">
-        </div>
+    </div>
+
+    <!-- Sekcja wyboru bloków -->
+    <div class="block-selection" id="blockSelection">
+        <!-- Bloki będą dodawane dynamicznie -->
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Inicjalizacja color pickera
+            // Wczytanie bloków z JSON
+            $.getJSON('./core/data/blocks.json', function(data) {
+                var blocks = data.blocks;
+
+                // Dodanie przycisków wyboru bloków
+                blocks.forEach(function(block) {
+                    var button = $('<button></button>')
+                        .text(block.name)
+                        .attr('data-template', block.template)
+                        .addClass('block-button');
+
+                    var tooltip = $('<span></span>')
+                        .text(block.description)
+                        .addClass('block-tooltip');
+
+                    button.append(tooltip);
+                    $('#blockSelection').append(button);
+                });
+
+                // Funkcja dodawania wybranego bloku do edytora
+                $('.block-button').click(function() {
+                    var template = $(this).attr('data-template');
+                    $('#editableContent').append(template);
+                });
+            });
+
+            // Edycja tekstu w divie z contenteditable
+            $('#editText').click(function() {
+                var contentArea = $('#editableContent');
+                contentArea.attr("contenteditable", contentArea.attr("contenteditable") === "true" ? "false" : "true");
+            });
+
+            // Zmiana kolorów tła
             $('#changeBgColor').click(function() {
                 $(this).spectrum({
                     color: "#ffffff",
@@ -83,6 +78,7 @@
                 });
             });
 
+            // Zmiana kolorów tekstu
             $('#changeTextColor').click(function() {
                 $(this).spectrum({
                     color: "#000000",
@@ -92,12 +88,6 @@
                         $(".editable-area").css("color", color.toString());
                     }
                 });
-            });
-
-            // Edycja tekstu w divie z contenteditable
-            $('#editText').click(function() {
-                var contentArea = $('#editableContent');
-                contentArea.attr("contenteditable", contentArea.attr("contenteditable") === "true" ? "false" : "true");
             });
 
             // Ładowanie obrazka

@@ -1,0 +1,23 @@
+{
+    "blocks": [
+      {
+        "id": 1,
+        "name": "Nagłówek",
+        "description": "Prosty nagłówek z tekstem powitalnym",
+        "template": "<div class='editable-box'><h1>Witaj na mojej stronie!</h1><p>Edytuj ten tekst w trybie edycji.</p></div>"
+      },
+      {
+        "id": 2,
+        "name": "Obrazek",
+        "description": "Obrazek do wyświetlenia na stronie",
+        "template": "<div class='image-container'><img src='https://via.placeholder.com/600x300' alt='Obrazek'></div>"
+      },
+      {
+        "id": 3,
+        "name": "Sekcja kontaktowa",
+        "description": "Formularz kontaktowy z polami do wypełnienia",
+        "template": "<div class='editable-box'><h2>Kontakt</h2><form><label for='name'>Imię:</label><input type='text' id='name'><label for='email'>E-mail:</label><input type='email' id='email'><button type='submit'>Wyślij</button></form></div>"
+      }
+    ]
+  }
+  
