@@ -1,4 +1,4 @@
-/* Globalne style */
+/* Stylizacja jak wcześniej z dodatkiem przycisków i modali */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f7fc;
@@ -10,15 +10,8 @@ body {
     height: 100vh;
     flex-direction: column;
     padding-top: 60px;
-    transition: background-color 0.3s ease;
 }
 
-h1, h2, p {
-    margin: 0;
-    padding: 0;
-}
-
-/* Toolbar */
 .toolbar {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -31,7 +24,6 @@ h1, h2, p {
     left: 0;
     right: 0;
     z-index: 1000;
-    transition: background-color 0.3s ease;
 }
 
 .toolbar button {
@@ -49,9 +41,8 @@ h1, h2, p {
     background-color: #2980b9;
 }
 
-/* Edytowalna zawartość */
 .editable-area {
-    margin-top: 80px; /* Adjust for the toolbar */
+    margin-top: 80px; 
     padding: 40px;
     background-color: #fff;
     border-radius: 12px;
@@ -62,25 +53,8 @@ h1, h2, p {
     overflow: auto;
 }
 
-.editable-box {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #e2e8f0;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.image-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Modal */
 .modal {
-    display: none; /* Domyślnie ukryty */
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -91,43 +65,13 @@ h1, h2, p {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 2000;
     width: 400px;
-    max-width: 90%;
 }
 
 .modal.active {
     display: block;
 }
 
-.modal-header {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.modal-body {
-    margin-bottom: 20px;
-}
-
-.modal-footer {
-    text-align: right;
-}
-
-.modal-footer button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 30px;
-    background-color: #3498db;
-    color: white;
-    transition: background-color 0.3s ease;
-}
-
-.modal-footer button:hover {
-    background-color: #2980b9;
-}
-
-/* Styl dla formularzy edycji */
+/* Style modalów i formularzy edycji */
 .text-edit-form input, .text-edit-form select {
     width: 100%;
     padding: 10px;
@@ -137,7 +81,6 @@ h1, h2, p {
     font-size: 16px;
 }
 
-/* Style dla edycji obrazu */
 .image-edit-form input {
     width: 100%;
     padding: 10px;

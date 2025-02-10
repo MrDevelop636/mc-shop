@@ -62,30 +62,22 @@ $(document).ready(function() {
         });
     });
 
-    // Dodawanie nowych bloków (tekstowych i obrazków)
-    $('#addTextBlock').click(function() {
-        const newTextBlock = `
-            <div class="editable-box">
-                <h1>Nowy tekst</h1>
-                <p>Wprowadź treść tutaj...</p>
-            </div>
-        `;
-        $('.editable-area').append(newTextBlock);
-    });
+    // Zapisywanie zmian do JSON
+    $('#savePage').click(function() {
+        const pageData = {
+            content: $('#editableArea').html()
+        };
 
-    $('#addImageBlock').click(function() {
-        const newImageBlock = `
-            <div class="image-container">
-                <img src="https://via.placeholder.com/400x300" alt="Nowy obraz">
-            </div>
-        `;
-        $('.editable-area').append(newImageBlock);
-    });
-
-    // Obsługa kliknięcia w inne elementy (zapobiega zamknięciu modala na kliknięcie poza)
-    $('#modal').click(function(event) {
-        if (event.target === this) {
-            $('#modal').removeClass('active');
-        }
+        $.ajax({
+            url: 'edit.php', 
+            method: 'POST',
+            data: {
+                save: true,
+                page_data: JSON.stringify(pageData)
+            },
+            success: function(response) {
+                alert(response);
+            }
+        });
     });
 });
