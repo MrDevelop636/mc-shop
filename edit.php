@@ -1,6 +1,6 @@
 <?php
 // Wczytanie pliku JSON z dostępnych stron
-$pagesFile = 'pages.json';
+$pagesFile = './core/data/config.json';
 $pages = json_decode(file_get_contents($pagesFile), true);
 
 // Obsługa edytowania strony
