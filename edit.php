@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edytor Strony - Wix-like</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./includes/css/edit.css">
 </head>
 <body>
 
