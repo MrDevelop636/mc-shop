@@ -64,6 +64,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save'])) {
         </div>
     </div>
 
-    <script src="editor.js"></script>
+    <script src="./includes/js/editor.js"></script>
 </body>
 </html>
