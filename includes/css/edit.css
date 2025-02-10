@@ -34,8 +34,7 @@ h1, h2, p {
     transition: background-color 0.3s ease;
 }
 
-.toolbar button,
-.toolbar input {
+.toolbar button {
     padding: 10px 20px;
     font-size: 14px;
     cursor: pointer;
@@ -44,17 +43,10 @@ h1, h2, p {
     background-color: #3498db;
     color: white;
     transition: background-color 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.toolbar button:hover,
-.toolbar input:hover {
+.toolbar button:hover {
     background-color: #2980b9;
-}
-
-.toolbar button:active,
-.toolbar input:active {
-    background-color: #1c6fa2;
 }
 
 /* Edytowalna zawartość */
@@ -68,7 +60,6 @@ h1, h2, p {
     height: 600px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     overflow: auto;
-    transition: background-color 0.3s ease;
 }
 
 .editable-box {
@@ -78,142 +69,79 @@ h1, h2, p {
     margin-bottom: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: background-color 0.3s ease;
 }
 
-.editable-box:hover {
-    background-color: #cbd5e1;
-}
-
-/* Bloki do wyboru */
-.block-selection {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 40px;
-    padding: 30px 0;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    border-radius: 12px;
-}
-
-.block-selection button {
-    background-color: #2ecc71;
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.block-selection button:hover {
-    background-color: #27ae60;
-    transform: scale(1.05);
-}
-
-.block-selection button:active {
-    background-color: #1e8449;
-}
-
-/* Tooltip dla bloków */
-.block-tooltip {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 5px 10px;
-    font-size: 12px;
-    position: absolute;
-    border-radius: 4px;
-    top: -35px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: none;
-    transition: opacity 0.3s ease;
-}
-
-.block-selection button:hover .block-tooltip {
-    display: block;
-    opacity: 1;
-}
-
-/* Efekty animacji dla przejść */
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.editable-area {
-    animation: slideIn 0.5s ease-out;
-}
-
-.block-selection button {
-    animation: slideIn 0.5s ease-out;
-    animation-delay: 0.2s;
-}
-
-/* Style dla obrazów */
 .image-container img {
     max-width: 100%;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
 }
 
-.image-container img:hover {
-    transform: scale(1.03);
+/* Modal */
+.modal {
+    display: none; /* Domyślnie ukryty */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2000;
+    width: 400px;
+    max-width: 90%;
 }
 
-/* Formaty dla formularzy */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.modal.active {
+    display: block;
 }
 
-input[type="text"],
-input[type="email"],
-button[type="submit"] {
-    padding: 12px 20px;
+.modal-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.modal-body {
+    margin-bottom: 20px;
+}
+
+.modal-footer {
+    text-align: right;
+}
+
+.modal-footer button {
+    padding: 10px 20px;
     font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    background-color: #3498db;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.modal-footer button:hover {
+    background-color: #2980b9;
+}
+
+/* Styl dla formularzy edycji */
+.text-edit-form input, .text-edit-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
     border-radius: 8px;
     border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    transition: all 0.3s ease;
+    font-size: 16px;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-button[type="submit"]:hover {
-    background-color: #f1f1f1;
-    border-color: #3498db;
-}
-
-/* Responsywność */
-@media (max-width: 768px) {
-    .toolbar {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .editable-area {
-        padding: 20px;
-        height: auto;
-    }
-
-    .block-selection {
-        flex-direction: column;
-    }
-
-    .block-selection button {
-        margin-bottom: 10px;
-        width: 100%;
-    }
+/* Style dla edycji obrazu */
+.image-edit-form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
 }
