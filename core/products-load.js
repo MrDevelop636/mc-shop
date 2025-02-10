@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("./core/db/products.json") // Zamień na rzeczywistą ścieżkę do pliku JSON
+  fetch("../core/db/products.json") // Zamień na rzeczywistą ścieżkę do pliku JSON
       .then(response => response.json())
       .then(data => {
           const container = document.querySelector(".product-container"); // Kontener na wszystkie produkty
