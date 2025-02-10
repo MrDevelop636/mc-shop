@@ -1,90 +1,31 @@
-/* Stylizacja jak wcześniej z dodatkiem przycisków i modali */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7fc;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-    flex-direction: column;
-    padding-top: 60px;
-}
-
-.toolbar {
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px 30px;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-}
-
-.toolbar button {
-    padding: 10px 20px;
-    font-size: 14px;
-    cursor: pointer;
-    border: none;
-    border-radius: 30px;
-    background-color: #3498db;
-    color: white;
-    transition: background-color 0.3s ease;
-}
-
-.toolbar button:hover {
-    background-color: #2980b9;
-}
-
-.editable-area {
-    margin-top: 80px; 
-    padding: 40px;
-    background-color: #fff;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 1200px;
-    height: 600px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: auto;
+.content-container {
+    margin-top: 20px;
 }
 
 .modal {
     display: none;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 2000;
-    width: 400px;
-}
-
-.modal.active {
-    display: block;
-}
-
-/* Style modalów i formularzy edycji */
-.text-edit-form input, .text-edit-form select {
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 16px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
 }
 
-.image-edit-form input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 16px;
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 40%;
+    text-align: center;
+}
+
+#editOptions input {
+    margin-top: 5px;
+}
+
+#editOptions label {
+    margin-right: 10px;
 }
