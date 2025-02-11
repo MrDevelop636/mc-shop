@@ -9,13 +9,14 @@
   <link rel="stylesheet" href="./assets/css/modal.css">
   <link rel="stylesheet" href="./assets/css/nav.css">
   <link rel="stylesheet" href="./assets/css/products.css">
+  <link rel="stylesheet" href="./assets/css/footer.css">
   <script src="./assets/js/menu.js"></script>
   <script src="./assets/js/modal.js"></script>
   <script src="./core/loader/products-loader.js"></script>
   <script src="./assets/js/jquery-3.7.1.min.js"></script>
+  <script src="./core/loader/pages/main/loader.js"></script>
 </head>
 <body>
-
   <nav>
     <div class="logo">Moje Logo</div>
     <ul class="menu">
@@ -30,31 +31,22 @@
         <div class="line"></div>
     </div>
   </nav>
-
-  <!-- Hero Section -->
+  
   <section class="hero">
     <div class="hero-content">
-      <h1>FoxMC</h1>
-      <p>Najlepszy serwer minecraft</p>
-      <button id="shop-now">Zobacz Produkty</button>
+      <h1 class="hero-title">FoxMC</h1>
+      <p class="hero-subtitle">Najlepszy serwer minecraft</p>
+      <a href="#" class="hero-button-link"><button class="hero-button">Zobacz Produkty</button></a>
     </div>
   </section>
-  <!-- Product Section -->
+  
   <section class="products">
     <h2>Nasze Produkty</h2>
-    <div class="product-container">
-
-    </div>
+    <div class="product-container"></div>
   </section>
-<!-- Modal -->
-<div id="product-modal" class="modal">
-  <div class="modal-content">
-    <span id="close-modal" class="close">&times;</span>
-    <h2>Produkt: Ranga VIP</h2>
-    <img src="./images/product1.jpg" alt="Produkt 1">
-    <p>Otrzymaj specjalne przywileje na serwerze Minecraft! Kup teraz, aby zyskać wyjątkowy dostęp.</p>
-    <button>Dodaj do koszyka</button>
-  </div>
-</div>
+
+  <footer>
+    &copy; 2025 FoxMC. Wszystkie prawa zastrzeżone.
+  </footer>
 </body>
 </html>

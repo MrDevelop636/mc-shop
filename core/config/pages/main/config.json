@@ -1,0 +1,22 @@
+[
+    {
+      "section-id": "hero-title",
+      "text": "Nowy Tytuł",
+      "font-color": "#ffffff",
+      "font-size": 64,
+      "font": "Poppins"
+    },
+    {
+      "section-id": "hero-subtitle",
+      "text": "Nowy Podtytuł",
+      "font-color": "#ffffff",
+      "font-size": 20,
+      "font": "Poppins"
+    },
+    {
+      "section-id": "hero-button",
+      "text": "Zobacz Produkty",
+      "href": "https://example.com"
+    }
+  ]
+  
