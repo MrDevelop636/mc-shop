@@ -1,0 +1,10 @@
+{
+    "logo": "FoxMC",
+    "menu": [
+      { "text": "Strona Główna", "href": "index.html" },
+      { "text": "O nas", "href": "about.html" },
+      { "text": "Usługi", "href": "services.html" },
+      { "text": "Kontakt", "href": "contact.html" }
+    ]
+  }
+  
